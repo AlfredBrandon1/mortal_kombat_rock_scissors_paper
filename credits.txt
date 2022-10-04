@@ -1,0 +1,23 @@
+// MORTAL COMBAT
+
+START GAME button - with background mortal combat
+
+COMPUTER vs Player
+
+computer = math random
+player can choose = on the avatar with corresponding pictures, each avatar has corresponding number from 1 to 6
+
+https://wallpapersafari.com/w/9XvqKu
+https://mortalkombat.fandom.com/wiki/Liu_Kang?file=Liu_Kang_mk11.png
+https://mortalkombat.fandom.com/wiki/Kung_Lao?file=Human_kung_laos.png
+https://mortalkombat.fandom.com/wiki/Scorpion
+https://mortalkombat.fandom.com/wiki/Mileena?file=MK11MileenaRender.png
+https://mortalkombat.fandom.com/wiki/Raiden?file=Ra.png
+https://mortalkombat.fandom.com/wiki/Jax_Briggs?file=Jax_mk11.png
+
+
+
+
+https://www.soundboard.com/sb/sound/368556
+http://soundfxcenter.com/sound_effect/search.php?sfx=selecting+
+https://wallpapersafari.com/w/f5o4GR

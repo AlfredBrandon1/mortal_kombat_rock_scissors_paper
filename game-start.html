@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MORTAL KOMBA | rock scissors papers</title>
+  <link type="text/css" rel="stylesheet" href="style2.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <audio id="audio" src="sounds/Mortal Kombat Theme  KMFDM.mp3"></audio>
+    <nav class="header">
+      <button id="home">HOME</button> 
+      <button id="settings">Settings</button>
+      <h1 class="game-title"> MORTAL KOMBAT x rock scissors paper</h1>
+      <button id="credits">Credits</button>
+      <button id="instructions">Instructions</button>
+      <!-- <button class="start"> start </button> -->
+    </nav>
+
+    <!-- input name -->
+    <div class="input-name" id="input-name">
+      <input id="player" placeholder="Enter player name"> <button id="input-name-submit" class="input-name-submit"> proceed to the Underworld</button>
+    </div>
+
+    <!-- select fighters-->
+    <div class="select" id="select">
+      <p>SELECT YOUR FIGHTER</p>
+      <div class="select-player" id="select-player">
+        <div>
+          <img src="images/liu-kang.webp" alt="liu-kang"> <button class="fighter1" id="fighter1">Liu Kang</button>
+        </div>
+        <div>
+          <img src="images/kung-lao.webp" alt="kung-lao"> <button class="fighter2" id="fighter2">Kung Lao</button>
+        </div>
+        <div>
+          <img src="images/raiden.webp" alt="raiden"> <button class="fighter3" id="fighter3">Raiden</button>
+        </div>
+        <div>
+          <img src="images/scorpion.webp" alt="scorpion"> <button class="fighter4" id="fighter4">Scorpion</button>
+        </div>
+        <div>
+          <img src="images/milena.webp" alt="milena"> <button class="fighter5" id="fighter5">Milena</button>
+        </div>
+        <div>
+          <img src="images/sonya.webp" alt="sonya"> <button class="fighter6" id="fighter6">Sonya Blade</button>
+        </div>
+        <div>
+          <img src="images/sub-zero.webp" alt="sub-zero"> <button class="fighter7" id="fighter7">Sub-Zero</button>
+        </div>
+        <div>
+          <img src="images/jax.webp" alt="jax"> <button class="fighter8" id="fighter8">Jax</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- game box -->
+    <div class="main-game-box" id="main-game-box">
+        <audio id="roundSound" src="sounds/8d82b5_MK_Deception_Round_One_Sound_Effect.mp3"></audio>
+      <div class="heading-game-box" id="heading-game-box">
+        <h3>Choose Your Attack</h3>
+      </div><!-- skill buttons -->
+      <div class="skill-buttons" id="skill-buttons">
+        <button id="rock">rock</button>
+        <button id="scissors">scissors</button>
+        <button id="paper">paper</button>
+      </div>
+      <button class = 'roll'id="roll">Fight the BOSS</button>
+    </div>
+
+    <!-- empty divs for creating element images -->
+    <div class="image-deploy" id="image-deploy">
+        <div class="win-lose" id="win-lose"> </div>
+        <!-- selected fighter image -->
+      <div class="wrapper-deploy-fighter" id="wrapper-deploy-fighter"> 
+        <div class="deploy-fighter-heading" id="deploy-fighter-heading"> </div>
+        <div class="deploy-fighter" id="deploy-fighter">  </div><!-- empty div for user chosen fighter -->
+      </div>
+      <!-- center image -->
+      <div class="gif" id="gif">
+       
+        <div class="result-box" id="result-box"></div><!-- empty div for result -->
+      </div>
+      <!--boss image-->
+      <div class="wrapper-deploy-boss" id="wrapper-deploy-boss">
+        <div class="deploy-boss-heading" id="deploy-boss-heading"> BOSS (computer) </div>
+        <div class="deploy-boss" id="deploy-boss"><img src="images/Shaokahn.webp" alt="Shaokahn"></div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
