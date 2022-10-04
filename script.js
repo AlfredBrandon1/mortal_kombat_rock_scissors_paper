@@ -46,56 +46,56 @@ document.getElementById("input-name-submit").addEventListener("click", function 
 
 /* fighter select */
 document.getElementById("fighter1").addEventListener("click", function () {  
-    x.setAttribute("src", "images/liu-kang.webp");
+    x.setAttribute("src", "./images/liu-kang.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';  
         fighterSelected();
 });
 
 document.getElementById("fighter2").addEventListener("click", function () {
-    x.setAttribute("src", "images/kung-lao.webp");
+    x.setAttribute("src", "./images/kung-lao.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter3").addEventListener("click", function () {
-    x.setAttribute("src", "images/raiden.webp");
+    x.setAttribute("src", "./images/raiden.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter4").addEventListener("click", function () {
-    x.setAttribute("src", "images/scorpion.webp");
+    x.setAttribute("src", "./images/scorpion.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter5").addEventListener("click", function () {
-    x.setAttribute("src", "images/milena.webp");
+    x.setAttribute("src", "./images/milena.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter6").addEventListener("click", function () {
-    x.setAttribute("src", "images/sonya.webp");
+    x.setAttribute("src", "./images/sonya.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter7").addEventListener("click", function () {
-    x.setAttribute("src", "images/sub-zero.webp");
+    x.setAttribute("src", "./images/sub-zero.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
 });
 
 document.getElementById("fighter8").addEventListener("click", function () {
-    x.setAttribute("src", "images/jax.webp");
+    x.setAttribute("src", "./images/jax.webp");
         document.getElementById('deploy-fighter').appendChild(x);
         selectHide.style.display = 'none';
         fighterSelected();
@@ -104,7 +104,7 @@ document.getElementById("fighter8").addEventListener("click", function () {
 //REVEAL fighting GIF
  document.getElementById("roll").addEventListener("click", function () {
     const fight = document.createElement('IMG');
-    fight.setAttribute("src", "images/fight.gif"); //gif
+    fight.setAttribute("src", "./images/fight.gif"); //gif
     roll.style.visibility = 'hidden';
         document.getElementById('gif').appendChild(fight);
 });

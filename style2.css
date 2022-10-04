@@ -1,11 +1,11 @@
 @font-face {
     font-family: Mk;
-    src: url(fonts/mortal_kombat/mk2.ttf) format('truetype');
+    src: url(./fonts/mortal_kombat/mk2.ttf) format('truetype');
 }
 body{
     display: flex;
     justify-content: center;
-    background-image: url(images/game-start.jpg);
+    background-image: url(./images/game-start.jpg);
     background-size: contain;
 }
 
