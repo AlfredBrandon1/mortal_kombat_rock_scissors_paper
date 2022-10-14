@@ -1,5 +1,3 @@
-//const rollDice = () => Math.round(Math.random() * (6 - 1) +1);
-const roll = document.getElementById('roll');
 const selectHide = document.getElementById('select');
 const x = document.createElement("IMG");
 const gameBox = document.getElementById('main-game-box');
@@ -7,16 +5,18 @@ const inputName = document.getElementById('input-name');
 const inputNameSubmit = document.getElementById('input-name-submit');
 const imageDeploy = document.getElementById('image-deploy');
 let computerChoice = Math.random();
-let userChoice = ['rock','scissors','paper'];
+let userChoice = ['rock','scissor','paper'];
 const player = document.getElementById("player").value;
+let computerScore = 0;
+let userScore = 0;
 
 start();
 document.getElementById('audio').play();
 
 /* after clicking the start in homepage */
 function start () {  
-    gameBox.style.visibility = 'hidden'; 
-    selectHide.style.visibility = 'hidden'; 
+    gameBox.style.visibility = 'hidden';
+    selectHide.style.visibility = 'hidden';
     imageDeploy.style.visibility = 'hidden';
 };
 
@@ -35,7 +35,7 @@ function fighterSelected () {
 
 document.getElementById('deploy-fighter-heading').innerHTML = player.value;
 
-/* function and event listener for : INPUT NAME */
+// INPUT NAME function and event listener
 document.getElementById("input-name-submit").addEventListener("click", function () {
     inputName.style.display = 'none';
     gameBox.style.visibility = 'hidden';
@@ -44,7 +44,7 @@ document.getElementById("input-name-submit").addEventListener("click", function 
  
 });
 
-/* fighter select */
+//SELECT FIGHTER START functions and eventlisteners
 document.getElementById("fighter1").addEventListener("click", function () {  
     x.setAttribute("src", "./images/liu-kang.webp");
         document.getElementById('deploy-fighter').appendChild(x);
@@ -100,66 +100,64 @@ document.getElementById("fighter8").addEventListener("click", function () {
         selectHide.style.display = 'none';
         fighterSelected();
 });
-
-//REVEAL fighting GIF
- document.getElementById("roll").addEventListener("click", function () {
-    const fight = document.createElement('IMG');
-    fight.setAttribute("src", "./images/fight.gif"); //gif
-    roll.style.visibility = 'hidden';
-        document.getElementById('gif').appendChild(fight);
-});
+//SELECT FIGHTER END
 
 //COMPUTER choice randomizer
 function compchoice ()
 {
-    if (computerChoice <= 0.34){  
+    if (computerChoice < 0.34){  
         return computerChoice = "rock";
     } 
-    else if(computerChoice <= 0.679999999999999 && computerChoice >= 0.35){
+    else if(computerChoice < 0.68 && computerChoice >= 0.34){
         return computerChoice = "paper";
     }
-    if (computerChoice >= 0.68999999999999999999){
-        return computerChoice = "scissors";
+    else if (computerChoice >= 0.68){
+        return computerChoice = "scissor";
     }
-
 };
 
 //COMPARE choice of user and computer
 function compare (choice1, choice2){
-    if (computerChoice === "rock" || "paper" || "scissors"){
+    if (computerChoice === "rock" || "paper" || "scissor"){
         if (choice1 === choice2){
             return "DRAW!!";
         }
 
         else if (choice1 === "rock"){
-            if (choice2 === "scissors")
-            {
+            if (choice2 === "scissor")
+            {   
+                userScore ++
                 return "YOU WIN!";
             }
             else if (choice2 === "paper")
             {
+                computerScore +=0.5
                 return "YOU LOSE!";
             }
         }
-        if (choice1 === "scissors")
+        else if (choice1 === "scissor")
         {
             if (choice2 === "rock")
-            {
+            {   
+                userScore ++
                 return "YOU WIN!";
             }
             else if (choice2 === "paper")
-            {
+            {   
+                computerScore +=0.5
                 return "YOU LOSE!";
             }
         }
         else if (choice1 === "paper")
         {
             if (choice2 === "rock")
-            {
+            {   
+                userScore ++
                 return "YOU WIN!";
             }
-            else if (choice2 === "scissors")
-            {
+            else if (choice2 === "scissor")
+            {   
+                computerScore +=0.5
                 return "YOU LOSE!";
                 
             }
@@ -173,58 +171,74 @@ document.getElementById('rock').addEventListener('click',function(){
   computerChoice = Math.random();  
   compchoice();
   compare(userChoice, computerChoice);
-    
-  const player = document.getElementById("player").value ;
 
-  // display the result on the page
-  document.getElementById("result-box").innerHTML = `<p>${player} = ${userChoice}</p> <p>BOSS = ${computerChoice}</p> `;
+  //get user name
+  const player = document.getElementById("player").value ;
+  // display user choice and score
+  document.getElementById("result-user").innerHTML = `${player} : ${userChoice}<br> Score : ${userScore}/5`;
+  //display result
   document.getElementById("win-lose").innerHTML = compare(userChoice, computerChoice);
+  //display computer choice and score
+  document.getElementById("result-boss").innerHTML = ` BOSS : ${computerChoice} <br> Score:  ${computerScore}/5 `
+  //perform the game-over function
+  gameOver()
 });
 
-//SCISSORS BUTTON function
-document.getElementById('scissors').addEventListener('click',function(){
+//SCISSOR BUTTON function
+document.getElementById('scissor').addEventListener('click',function(){
 
-    userChoice = "scissors";
+    userChoice = "scissor";
     computerChoice = Math.random();  
     compchoice();
     compare(userChoice, computerChoice);
-    
-    const player = document.getElementById("player").value;
-    // display the result on the page
-    document.getElementById("result-box").innerHTML = `<p>${player} = ${userChoice}</p> <p>BOSS = ${computerChoice}</p> `;
+  
+    //get user name
+    const player = document.getElementById("player").value ;
+    // display user choice and score
+    document.getElementById("result-user").innerHTML = `${player} : ${userChoice}<br> Score : ${userScore}/5`;
+    //display result
     document.getElementById("win-lose").innerHTML = compare(userChoice, computerChoice);
+    //display computer choice and score
+    document.getElementById("result-boss").innerHTML = ` BOSS : ${computerChoice} <br> Score:  ${computerScore}/5 `
+    //perform the game-over function
+    gameOver()
 });
 
 //PAPER BUTTON function
 document.getElementById('paper').addEventListener('click',function(){
-
     userChoice = "paper";
     computerChoice = Math.random();  
     compchoice();
     compare(userChoice, computerChoice);
-    
-    const player = document.getElementById("player").value;
-    // display the result on the page
-    document.getElementById("result-box").innerHTML = `<p>${player} = ${userChoice}</p> <p>BOSS = ${computerChoice}</p> `;
+  
+    //get user name
+    const player = document.getElementById("player").value ;
+    // display user choice and score
+    document.getElementById("result-user").innerHTML = `${player} : ${userChoice}<br> Score : ${userScore}/5`;
+    //display result
     document.getElementById("win-lose").innerHTML = compare(userChoice, computerChoice);
+    //display computer choice and score
+    document.getElementById("result-boss").innerHTML = ` BOSS : ${computerChoice} <br> Score:  ${computerScore}/5 `
+    //perform the game-over function
+    gameOver()
 });
 
+//HOME BUTTON function
 document.getElementById('home').addEventListener('click', function(){
     location.href = 'index.html'
 });
 
-/* const startTimer=document.querySelector('.start');
-startTimer.addEventListener('click',()=>{
-  let timeleft = 60;
-  let downloadTimer = setInterval(countDown, 1000);
-  function countDown(){
-    if(timeleft <= 0){
-      clearInterval(downloadTimer);
-      document.getElementById("result-box").innerHTML = "Finished";
-    } else {
-      document.getElementById("result-box").innerHTML = timeleft + " seconds remaining";
+//GAME OVER function
+function gameOver (){
+    if(computerScore >= 6)
+    {
+    alert('GAME OVER! DEFEAT!')
+      location.href ='game-start.html'
     }
-    timeleft -= 1;
-  }
-});
- */
+    else if(userScore >= 6)
+    {
+    alert('GAME OVER! WIN!')
+      location.href ='game-start.html'
+    }
+}
+
